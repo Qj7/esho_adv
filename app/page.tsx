@@ -8,6 +8,7 @@ import {
 } from '@/lib/qr-scan';
 
 export const dynamic = 'force-dynamic';
+export const preferredRegion = ['sin1', 'iad1', 'fra1'];
 
 export default async function QrRedirectPage() {
   const redirectUrl = process.env.REDIRECT_URL;
@@ -22,7 +23,7 @@ export default async function QrRedirectPage() {
   const device = parseDevice(userAgent);
 
   const text = buildTelegramMessage({ geo, device, userAgent });
-  sendTelegramNotification(text);
+  await sendTelegramNotification(text);
 
   redirect(redirectUrl);
 }

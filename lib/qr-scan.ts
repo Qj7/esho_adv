@@ -49,7 +49,9 @@ export function buildTelegramMessage(params: {
     .join('\n');
 }
 
-export function sendTelegramNotification(text: string): void {
+import { sendTelegramMessage } from '@/lib/telegram';
+
+export async function sendTelegramNotification(text: string): Promise<void> {
   const token = process.env.TG_BOT_TOKEN;
   const chatId = process.env.TG_CHAT_ID;
 
@@ -58,9 +60,5 @@ export function sendTelegramNotification(text: string): void {
     return;
   }
 
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: chatId, text }),
-  }).catch((err) => console.error('[qr] Telegram error:', err));
+  await sendTelegramMessage({ token, chatId, text });
 }
