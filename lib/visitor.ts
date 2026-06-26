@@ -1,7 +1,5 @@
-import { cookies } from 'next/headers';
-
-const VISITOR_COOKIE = 'qr_visitor';
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+export const VISITOR_COOKIE = 'qr_visitor';
+export const VISITOR_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
 export type VisitorInfo = {
   id: string;
@@ -41,9 +39,8 @@ export function extractIp(headersList: Headers): string {
   return headersList.get('x-real-ip') || 'Unknown';
 }
 
-export async function trackVisitor(): Promise<VisitorInfo> {
-  const cookieStore = await cookies();
-  const existing = parseVisitorCookie(cookieStore.get(VISITOR_COOKIE)?.value);
+export function trackVisitor(cookieValue: string | undefined): VisitorInfo {
+  const existing = parseVisitorCookie(cookieValue);
   const now = new Date().toISOString();
 
   const visitor: VisitorCookie = existing
@@ -57,16 +54,16 @@ export async function trackVisitor(): Promise<VisitorInfo> {
         firstSeenAt: now,
       };
 
-  cookieStore.set(VISITOR_COOKIE, JSON.stringify(visitor), {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    maxAge: COOKIE_MAX_AGE,
-    path: '/',
-  });
-
   return {
     ...visitor,
     isReturning: visitor.visits > 1,
   };
+}
+
+export function visitorCookiePayload(visitor: VisitorInfo): string {
+  return JSON.stringify({
+    id: visitor.id,
+    visits: visitor.visits,
+    firstSeenAt: visitor.firstSeenAt,
+  });
 }
