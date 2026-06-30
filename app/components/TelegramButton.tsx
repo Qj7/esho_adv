@@ -14,10 +14,10 @@ export function TelegramButton({ telegramUrl }: TelegramButtonProps) {
       aria-label="Join Esho on Telegram for promos"
     >
       <Image
-        src="/telegram-button.png"
+        src="/image2.png"
         alt=""
-        width={876}
-        height={184}
+        width={1226}
+        height={356}
         className="btn-telegram-image"
       />
     </a>
