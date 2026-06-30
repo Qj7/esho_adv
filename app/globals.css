@@ -2,7 +2,7 @@
   --color-teal: #82c0c0;
   --color-gold: #c5a048;
   --color-navy: #14213d;
-  --color-bg: #f0eeeb;
+  --color-bg: #ffffff;
   --color-text: #4a4a4a;
 }
 
@@ -152,12 +152,17 @@ body {
 }
 
 .btn-grab {
-  background: #00b14f;
+  background: #2e9c4b;
   color: #ffffff;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.9375rem 1.25rem;
+  border-radius: 12px;
 }
 
 .btn-grab:hover {
-  background: #009a45;
+  background: #268a42;
 }
 
 .btn-telegram {

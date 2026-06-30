@@ -8,13 +8,13 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'ESHO — свежая и креативная кухня',
+  title: 'ESHO — Slavic Food with Slavic Soul',
   robots: 'noindex, nofollow',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={montserrat.variable}>
+    <html lang="en" className={montserrat.variable}>
       <body>{children}</body>
     </html>
   );

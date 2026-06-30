@@ -19,7 +19,7 @@ export function TelegramButton({ telegramUrl }: TelegramButtonProps) {
       rel="noopener noreferrer"
     >
       <TelegramIcon />
-      Написать в Telegram
+      Message on Telegram
     </a>
   );
 }

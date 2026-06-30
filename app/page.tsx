@@ -29,12 +29,12 @@ export default function HomePage() {
             <span className="brand-accent" aria-hidden="true" />
           </div>
           <p className="brand-tagline">
-            Свежая и креативная
+            Slavic Food
             <br />
-            кухня
+            with Slavic Soul
           </p>
           <p className="text">
-            Доставка через Grab — по вопросам меню и бронирования пишите в Telegram.
+            Order via Grab — for menu questions and reservations, message us on Telegram.
           </p>
           <div className="buttons">
             <GrabButton grabDeepLink={grabDeepLink} grabWebUrl={grabWebUrl} />
