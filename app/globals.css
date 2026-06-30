@@ -126,14 +126,19 @@ body {
 }
 
 .btn-grab {
+  width: auto;
+  max-width: 200px;
+  align-self: center;
   padding: 0;
   background: transparent;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(46, 156, 75, 0.22);
 }
 
 .btn-grab:hover {
   background: transparent;
+  box-shadow: 0 6px 16px rgba(46, 156, 75, 0.28);
 }
 
 .btn-grab-image {
