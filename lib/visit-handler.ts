@@ -13,16 +13,7 @@ import {
   visitorCookiePayload,
 } from '@/lib/visitor';
 
-export const dynamic = 'force-dynamic';
-export const preferredRegion = ['sin1', 'iad1', 'fra1'];
-
-export async function GET(request: NextRequest) {
-  const redirectUrl = process.env.REDIRECT_URL;
-
-  if (!redirectUrl) {
-    return new NextResponse('REDIRECT_URL is not configured', { status: 500 });
-  }
-
+export async function handleVisit(request: NextRequest): Promise<NextResponse> {
   const headersList = request.headers;
   const geo = extractGeo(headersList);
   const ip = extractIp(headersList);
@@ -33,7 +24,7 @@ export async function GET(request: NextRequest) {
   const text = buildTelegramMessage({ geo, device, userAgent, ip, visitor });
   await sendTelegramNotification(text);
 
-  const response = NextResponse.redirect(redirectUrl);
+  const response = new NextResponse(null, { status: 204 });
   response.cookies.set(VISITOR_COOKIE, visitorCookiePayload(visitor), {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
