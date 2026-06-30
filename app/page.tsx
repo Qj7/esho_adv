@@ -24,10 +24,6 @@ export default function HomePage() {
       <div className="brand">
         <Image src="/logo.png" alt="ESHO" className="logo" width={200} height={120} priority />
         <div className="card">
-          <div className="brand-heading">
-            <h1 className="brand-name">ESHO</h1>
-            <span className="brand-accent" aria-hidden="true" />
-          </div>
           <p className="brand-tagline">
             Slavic Food
             <br />

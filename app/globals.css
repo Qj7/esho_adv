@@ -1,5 +1,4 @@
 :root {
-  --color-teal: #82c0c0;
   --color-gold: #c5a048;
   --color-navy: #14213d;
   --color-bg: #ffffff;
@@ -62,31 +61,6 @@ body {
   max-width: 180px;
   max-height: 110px;
   object-fit: contain;
-}
-
-.brand-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.875rem;
-}
-
-.brand-name {
-  margin: 0;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-teal);
-  line-height: 1;
-}
-
-.brand-accent {
-  display: block;
-  width: 2px;
-  height: 2.25rem;
-  background: var(--color-gold);
-  flex-shrink: 0;
 }
 
 .brand-tagline {
@@ -152,17 +126,20 @@ body {
 }
 
 .btn-grab {
-  background: #2e9c4b;
-  color: #ffffff;
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  padding: 0.9375rem 1.25rem;
+  padding: 0;
+  background: transparent;
   border-radius: 12px;
+  overflow: hidden;
 }
 
 .btn-grab:hover {
-  background: #268a42;
+  background: transparent;
+}
+
+.btn-grab-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .btn-telegram {

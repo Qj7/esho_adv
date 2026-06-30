@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 type GrabButtonProps = {
@@ -21,8 +22,20 @@ export function GrabButton({ grabDeepLink, grabWebUrl }: GrabButtonProps) {
   }
 
   return (
-    <a className="btn btn-grab" href={grabDeepLink} onClick={openGrab}>
-      Grab
+    <a
+      className="btn btn-grab"
+      href={grabDeepLink}
+      onClick={openGrab}
+      aria-label="Order on Grab"
+    >
+      <Image
+        src="/image.png"
+        alt=""
+        width={876}
+        height={184}
+        className="btn-grab-image"
+        priority
+      />
     </a>
   );
 }
