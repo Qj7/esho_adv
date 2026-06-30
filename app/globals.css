@@ -159,10 +159,11 @@ body {
 }
 
 .btn-telegram {
+  background: #139ef3;
   box-shadow: 0 4px 12px rgba(42, 171, 238, 0.22);
 }
 
 .btn-telegram:hover {
-  background: transparent;
+  background: #139ef3;
   box-shadow: 0 6px 16px rgba(42, 171, 238, 0.28);
 }
