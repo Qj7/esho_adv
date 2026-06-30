@@ -7,7 +7,8 @@ export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   const grabWebUrl = process.env.REDIRECT_URL?.trim();
-  const telegramUrl = process.env.TELEGRAM_URL?.trim();
+  const telegramUrl =
+    process.env.TELEGRAM_URL?.trim() || 'https://t.me/+ug-wxBTOPwNmMzk1';
 
   if (!grabWebUrl) {
     return (
@@ -30,11 +31,12 @@ export default function HomePage() {
             with Slavic Soul
           </p>
           <p className="text">
-            Order via Grab — for menu questions and reservations, message us on Telegram.
+            Order via Grab — join our Telegram for special promos, menu questions, and
+            reservations.
           </p>
           <div className="buttons">
             <GrabButton grabDeepLink={grabDeepLink} grabWebUrl={grabWebUrl} />
-            {telegramUrl ? <TelegramButton telegramUrl={telegramUrl} /> : null}
+            <TelegramButton telegramUrl={telegramUrl} />
           </div>
         </div>
       </div>

@@ -148,10 +148,23 @@ body {
 }
 
 .btn-telegram {
-  background: var(--color-navy);
-  color: #ffffff;
+  width: auto;
+  max-width: 200px;
+  align-self: center;
+  padding: 0;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(42, 171, 238, 0.22);
 }
 
 .btn-telegram:hover {
-  background: #1c2f52;
+  background: transparent;
+  box-shadow: 0 6px 16px rgba(42, 171, 238, 0.28);
+}
+
+.btn-telegram-image {
+  display: block;
+  width: 100%;
+  height: auto;
 }
