@@ -1,30 +1,16 @@
 import Image from 'next/image';
-import { OrderLinks } from '@/app/components/OrderLinks';
+import { GrabButton } from '@/app/components/GrabButton';
 import { toGrabFoodDeepLink } from '@/lib/grab';
-import logo from '../logo.png';
 
 export const dynamic = 'force-dynamic';
 
-function readEnv(name: string): string | undefined {
-  const value = process.env[name]?.trim();
-  return value || undefined;
-}
-
 export default function HomePage() {
-  const grabWebUrl = readEnv('REDIRECT_URL');
-  const telegramUrl = readEnv('TELEGRAM_URL');
-  const odooUrl = readEnv('ODOO_URL');
+  const grabWebUrl = process.env.REDIRECT_URL?.trim();
 
-  if (!grabWebUrl || !telegramUrl || !odooUrl) {
-    const missing = [
-      !grabWebUrl && 'REDIRECT_URL',
-      !telegramUrl && 'TELEGRAM_URL',
-      !odooUrl && 'ODOO_URL',
-    ].filter(Boolean);
-
+  if (!grabWebUrl) {
     return (
       <main className="page">
-        <p>Missing environment variables: {missing.join(', ')}</p>
+        <p>REDIRECT_URL is not configured</p>
       </main>
     );
   }
@@ -34,19 +20,14 @@ export default function HomePage() {
   return (
     <main className="page">
       <div className="card">
-        <Image src={logo} alt="Logo" className="logo" priority />
+        <Image src="/logo.png" alt="Logo" className="logo" width={200} height={120} priority />
         <div>
           <h1 className="heading">Order food with us</h1>
           <p className="text">
-            Hungry? Choose your preferred platform below and place your order in just a few taps.
+            Hungry? Tap the button below to order on Grab — opens the app if you have it installed.
           </p>
         </div>
-        <OrderLinks
-          grabDeepLink={grabDeepLink}
-          grabWebUrl={grabWebUrl}
-          telegramUrl={telegramUrl}
-          odooUrl={odooUrl}
-        />
+        <GrabButton grabDeepLink={grabDeepLink} grabWebUrl={grabWebUrl} />
       </div>
     </main>
   );

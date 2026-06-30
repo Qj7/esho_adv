@@ -117,20 +117,3 @@ body {
   background: #009a45;
 }
 
-.btn-telegram {
-  background: #229ed9;
-  color: #ffffff;
-}
-
-.btn-telegram:hover {
-  background: #1a8fc7;
-}
-
-.btn-odoo {
-  background: #714b67;
-  color: #ffffff;
-}
-
-.btn-odoo:hover {
-  background: #5f3f57;
-}
