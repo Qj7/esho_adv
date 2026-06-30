@@ -16,8 +16,7 @@ export function TelegramButton({ telegramUrl }: TelegramButtonProps) {
       <Image
         src="/image2.png"
         alt=""
-        width={1226}
-        height={356}
+        fill
         sizes="200px"
         className="btn-telegram-image"
       />

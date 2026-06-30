@@ -31,8 +31,8 @@ export function GrabButton({ grabDeepLink, grabWebUrl }: GrabButtonProps) {
       <Image
         src="/image.png"
         alt=""
-        width={876}
-        height={184}
+        fill
+        sizes="200px"
         className="btn-grab-image"
         priority
       />

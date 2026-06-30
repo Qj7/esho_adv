@@ -3,6 +3,8 @@
   --color-navy: #14213d;
   --color-bg: #ffffff;
   --color-text: #4a4a4a;
+  --btn-brand-width: 200px;
+  --btn-brand-height: calc(var(--btn-brand-width) * 184 / 876);
 }
 
 *,
@@ -127,8 +129,10 @@ body {
 
 .btn-grab,
 .btn-telegram {
-  width: 100%;
-  max-width: 200px;
+  position: relative;
+  display: block;
+  width: var(--btn-brand-width);
+  height: var(--btn-brand-height);
   min-width: 0;
   align-self: center;
   padding: 0;
@@ -150,7 +154,8 @@ body {
 .btn-telegram-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .btn-telegram {
