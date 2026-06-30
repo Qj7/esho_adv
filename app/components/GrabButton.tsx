@@ -29,11 +29,9 @@ export function GrabButton({ grabDeepLink, grabWebUrl }: GrabButtonProps) {
   }
 
   return (
-    <div className="buttons">
-      <a className="btn btn-grab" href={grabDeepLink} onClick={openGrab}>
-        <GrabIcon />
-        Order on Grab
-      </a>
-    </div>
+    <a className="btn btn-grab" href={grabDeepLink} onClick={openGrab}>
+      <GrabIcon />
+      Заказать в Grab
+    </a>
   );
 }
