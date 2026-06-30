@@ -125,14 +125,19 @@ body {
   height: 22px;
 }
 
-.btn-grab {
-  width: auto;
+.btn-grab,
+.btn-telegram {
+  width: 100%;
   max-width: 200px;
+  min-width: 0;
   align-self: center;
   padding: 0;
   background: transparent;
   border-radius: 12px;
   overflow: hidden;
+}
+
+.btn-grab {
   box-shadow: 0 4px 12px rgba(46, 156, 75, 0.22);
 }
 
@@ -141,30 +146,18 @@ body {
   box-shadow: 0 6px 16px rgba(46, 156, 75, 0.28);
 }
 
-.btn-grab-image {
+.btn-grab-image,
+.btn-telegram-image {
   display: block;
   width: 100%;
   height: auto;
 }
 
 .btn-telegram {
-  width: auto;
-  max-width: 200px;
-  align-self: center;
-  padding: 0;
-  background: transparent;
-  border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 12px rgba(42, 171, 238, 0.22);
 }
 
 .btn-telegram:hover {
   background: transparent;
   box-shadow: 0 6px 16px rgba(42, 171, 238, 0.28);
-}
-
-.btn-telegram-image {
-  display: block;
-  width: 100%;
-  height: auto;
 }
