@@ -29,16 +29,6 @@ function parseVisitorCookie(raw: string | undefined): VisitorCookie | null {
   return null;
 }
 
-export function extractIp(headersList: Headers): string {
-  const forwarded = headersList.get('x-forwarded-for');
-  if (forwarded) {
-    const clientIp = forwarded.split(',')[0]?.trim();
-    if (clientIp) return clientIp;
-  }
-
-  return headersList.get('x-real-ip') || 'Unknown';
-}
-
 export function trackVisitor(cookieValue: string | undefined): VisitorInfo {
   const existing = parseVisitorCookie(cookieValue);
   const now = new Date().toISOString();
